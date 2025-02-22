@@ -1,0 +1,13 @@
+.nav-section{
+    display: flex;
+    justify-content: space-between;
+}
+.app-text{
+    margin-top: 7px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+.button-section{
+    margin-right: 15px;
+}
