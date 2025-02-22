@@ -1,0 +1,18 @@
+.table-container {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    max-height: 500px; /* Set the height of the container */
+}
+
+.table-wrapper {
+    height: 450px; /* Fixed height for the table */
+}
+
+.add-doctor{
+    text-align: right;
+    margin-right: 10px;
+}
+.delete-button, .export-excel{
+    margin-right: 10px;
+}

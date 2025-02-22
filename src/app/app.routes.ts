@@ -6,7 +6,7 @@ import { DoctorFormComponent } from './components/doctors/doctor-form/doctor-for
 export const routes: Routes = [
     { path: 'doctors', component: DoctorListComponent },
     { path: 'doctors/:id', component: DoctorDetailComponent },
-    { path: 'create-doctor', component: DoctorFormComponent },
+    { path: 'doctor-form/:id', component: DoctorFormComponent },
     { path: '', redirectTo: 'doctors', pathMatch: 'full' },
     // { path: '**', component: NoAvailablePageComponent },
 ];
