@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DoctorService } from '../../../services/doctor.service';
 
 @Component({
   selector: 'app-doctor-list',
@@ -7,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './doctor-list.component.css'
 })
 export class DoctorListComponent {
+  doctors: any[] = [];
 
+  constructor(private doctorService: DoctorService) { }
+
+  ngOnInit() {
+    this.getDoctors();
+  }
+
+  getDoctors(){
+    this.doctorService.getDoctors().subscribe((data: any[]) => {
+      this.doctors = data;
+      console.log('this.doctors ',this.doctors);
+      
+    });
+  }
 }
