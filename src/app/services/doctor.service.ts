@@ -12,4 +12,8 @@ export class DoctorService {
   getDoctors(): Observable<any> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  addDoctor(doctorData:any): Observable<any>{
+    return this.http.post<any>(this.apiUrl, doctorData)
+  }
 }

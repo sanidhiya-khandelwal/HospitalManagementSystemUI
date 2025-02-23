@@ -1,1 +1,60 @@
-<p>doctor-form works!</p>
+<div class="container mt-4">
+    <h2>Add Doctor</h2>
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()" class="p-5 shadow mb-5 mt-5 bg-white rounded">
+       <div class="row">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" formControlName="firstName" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('firstName')?.invalid && doctorForm.get('firstName')?.touched">
+                    First Name is required
+                </small>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" formControlName="lastName" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('lastName')?.invalid && doctorForm.get('lastName')?.touched">
+                    Last Name is required
+                </small>
+            </div>
+       </div>
+
+       <div class="row">
+            <div class="col-md-6">
+                <label for="specialization" class="form-label">Specialization</label>
+                <input type="text" id="specialization" formControlName="specialization" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('specialization')?.invalid && doctorForm.get('specialization')?.touched">
+                    Specialization is required
+                </small>
+            </div>
+            <div class="col-md-6">
+                <label for="experienceYears" class="form-label">Contact Number</label>
+                <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('contactNumber')?.invalid && doctorForm.get('contactNumber')?.touched">
+                    Contact number must be 10 digits
+                </small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" formControlName="email" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('email')?.invalid && doctorForm.get('email')?.touched">
+                    Enter a valid email
+                </small>
+            </div>
+            <div class="col-md-6">
+                <label for="experienceYears" class="form-label">Experience</label>
+                <input type="text" id="experienceYears" formControlName="experienceYears" class="form-control"/>
+                <small class="text-danger" *ngIf="doctorForm.get('experienceYears')?.invalid && doctorForm.get('experienceYears')?.touched">
+                    Must be at least 1 year
+                </small>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="doctorForm.invalid || isSubmitting">
+                {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+            </button>
+        </div>
+    </form>
+</div>
